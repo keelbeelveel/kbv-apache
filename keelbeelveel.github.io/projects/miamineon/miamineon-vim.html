@@ -1,0 +1,1273 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <!-- Head Revised 6/22/2020 6:28 PM -->
+<link rel="stylesheet" type="text/css" href="/css/main.css"/>
+<meta name="author" content="Kyle Belveal"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="revised" content="Mon. June 1, 2020 9:20 PM"/>
+<meta name="description" content="keelbeelveel.com miamineon.vim info page."/>
+<title>keelbeelveel.com | miamineon.vim</title>
+<meta charset="UTF-8"/>
+
+        <link rel="stylesheet" type="text/css" href="/css/infobs.css"/>
+        <link rel="icon" href="/resources/icons/favicon.png" type="image/png"/>
+        <meta name="keywords" content="Kyle Belveal, keelbeelveel, computer science, computer engineering, computer, CS, CE, EECS, engineering, projects, project, vim, vim-airline, vim-plug, plugin, vimscript, colorscheme, neon, color, miamineon"/>
+        <!-- Layout type = info_basic        -->
+        <!-- Layout revised 6/22/2020 8:06pm -->
+    </head>
+    <body>
+        
+        <!-- Header revised 6/23/2020 10:02 PM -->
+<div id="header" class="header">
+    <header class="header">
+        <ul class="bar">
+            <li class="nav-home">
+                <a href="/index.html">
+                    <img src="/resources/icons/home.png"/>
+                </a>
+            </li>
+            <li class="nav-link">
+                <a href="/hardware.html">
+                    <span class"lbl">
+                        Hardware
+                    </span>
+                </a>
+            </li>
+            <li class="nav-link">
+                <a href="/midware.html">
+                    <span class="lbl">
+                        Midware
+                    </span>
+                </a>
+            </li>
+            <li class="nav-link">
+                <a href="/software/software.html">
+                    <span class="lbl">
+                        Software
+                    </span>
+                </a>
+            </li>
+            <li class="nav-link">
+                <a href="/projects/projects.html">
+                    <span class="lbl">
+                        All Projects
+                    </span>
+                </a>
+            </li>
+            <li class="nav-icon">
+                <a href="/about.html">
+                    <img src="/resources/icons/contact.png"/>
+                </a>
+            </li>
+            <li class="nav-icon">
+                <a href="https://github.com/keelbeelveel">
+                    <img src="/resources/icons/github.png"/>
+                </a>
+            </li>
+            <li class="nav-icon">
+                <a href="https://www.linkedin.com/in/keelbeelveel/">
+                    <img src="/resources/icons/linkedin.png"/>
+                </a>
+            </li>
+            <li class="nav-icon">
+                <a href="mailto:k.belveal17@gmail.com?subject=Contact from keelbeelveel.com">
+                    <img src="/resources/icons/mailto.png"/>
+                </a>
+            </li>
+            <li class="nav-banner">
+                <span id='a'>
+            
+                </span>
+            </li>
+        </ul>
+    </header>
+</div>
+
+        
+        <div id="body" class="contains-flex">
+            <div id="page-container" class="flex">
+                <main>
+                    <div id="content-wrap" class="content-wrap contains-flex">
+                        <div id="flex-left" class="flex left">
+                            <div id="page-header" class="page-header">
+                                <h3 class="page-header">
+                                    <div class="center">
+                                        <div class="icontooltip">
+                                            <a href="https://www.vim.org/">
+                                                <img src="/resources/icons/miamineon.png" alt="Icon" class="icon">
+                                            </a>
+                                            <span class="icontooltiptext text">
+                                                vimscript
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div id="page-title" class="page-header title">
+                                        miamineon.vim
+                                    </div>
+                                </h3>
+                                <span id="page-desc" class="page-header">
+                                    <h4 class="page-header">
+                                        The main .vim file for the colorscheme. Built on Steve Losh's <a href="https://github.com/sjl/badwolf">badwolf</a>.
+                                    </h4>
+                                </span>
+                            </div>
+                            <div id="file-links" class="software-links text center contains-flex">
+                                <a href="https://github.com/keelbeelveel/miamineon/blob/master/miamineon.vim">Github</a>
+                            </div>
+                        </div>
+                        <div id="flex-center" class="flex center">
+                            <div id="" class="file vim">
+                                <div id="file-label-type" class="file label text">
+                                    vimscript
+                                </div>
+                                <div id="file-label-title" class="file label text">
+                                    <a href="https://github.com/keelbeelveel/miamineon/blob/master/miamineon.vim">miamineon.vim</a> from <a href="https://github.com/keelbeelveel/">keelbeelveel's Github</a>
+                                </div>
+                                <figure class="highlight"><pre><code class="language-vim" data-lang="vim"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+</pre></td><td class="code"><pre><span class="c">" TODO Title Block.</span>
+<span class="c">" Supporting code -------------------------------------------------------------</span>
+<span class="c">" Preamble {{{</span>
+
+<span class="k">if</span> <span class="p">!</span><span class="nb">has</span><span class="p">(</span><span class="s2">"gui_running"</span><span class="p">)</span> &amp;&amp; &amp;<span class="nb">t_Co</span> <span class="p">!=</span> <span class="m">88</span> &amp;&amp; &amp;<span class="nb">t_Co</span> <span class="p">!=</span> <span class="m">256</span>
+    <span class="k">finish</span>
+<span class="k">endif</span>
+
+<span class="k">set</span> <span class="nb">background</span><span class="p">=</span><span class="nb">dark</span>
+
+<span class="k">if</span> <span class="nb">exists</span><span class="p">(</span><span class="s2">"syntax_on"</span><span class="p">)</span>
+    <span class="nb">syntax</span> reset
+<span class="k">endif</span>
+
+<span class="k">let</span> <span class="nv">g:colors_name</span> <span class="p">=</span> <span class="s2">"miamineon"</span>
+
+
+<span class="c">" }}}</span>
+<span class="c">" Palette {{{</span>
+
+<span class="k">let</span> <span class="nv">s:mnc</span> <span class="p">=</span> <span class="p">{}</span>
+
+<span class="c">" Normal text.</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>lime <span class="p">=</span> <span class="p">[</span><span class="s1">'00ff00'</span><span class="p">,</span> <span class="m">10</span><span class="p">]</span>
+
+<span class="c">" Pure and simple.</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>milk <span class="p">=</span> <span class="p">[</span><span class="s1">'ffffff'</span><span class="p">,</span> <span class="m">15</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>ink  <span class="p">=</span> <span class="p">[</span><span class="s1">'000000'</span><span class="p">,</span> <span class="m">16</span><span class="p">]</span>
+
+<span class="c">" A Gradient of Gray. A Graydient, if you will.</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>brightgray   <span class="p">=</span> <span class="p">[</span><span class="s1">'d9cec3'</span><span class="p">,</span> <span class="m">252</span><span class="p">]</span> 
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>lightgray    <span class="p">=</span> <span class="p">[</span><span class="s1">'998f84'</span><span class="p">,</span> <span class="m">245</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>gray         <span class="p">=</span> <span class="p">[</span><span class="s1">'857f78'</span><span class="p">,</span> <span class="m">243</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>mediumgray   <span class="p">=</span> <span class="p">[</span><span class="s1">'666462'</span><span class="p">,</span> <span class="m">241</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>deepgray     <span class="p">=</span> <span class="p">[</span><span class="s1">'45413b'</span><span class="p">,</span> <span class="m">238</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>deepergray   <span class="p">=</span> <span class="p">[</span><span class="s1">'35322d'</span><span class="p">,</span> <span class="m">236</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>darkgray     <span class="p">=</span> <span class="p">[</span><span class="s1">'242321'</span><span class="p">,</span> <span class="m">235</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>blackgray    <span class="p">=</span> <span class="p">[</span><span class="s1">'1c1b1a'</span><span class="p">,</span> <span class="m">233</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>blackestgray <span class="p">=</span> <span class="p">[</span><span class="s1">'141413'</span><span class="p">,</span> <span class="m">232</span><span class="p">]</span>
+
+<span class="c">" With a high of 114ºF</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>hotpink    <span class="p">=</span> <span class="p">[</span><span class="s1">'d7005f'</span><span class="p">,</span> <span class="m">162</span><span class="p">]</span>
+<span class="c">" So yellow it's criminal.</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>viceyellow <span class="p">=</span> <span class="p">[</span><span class="s1">'d7ff00'</span><span class="p">,</span> <span class="m">190</span><span class="p">]</span>
+<span class="c">" Like an unfiltered swimming pool.</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>seastain   <span class="p">=</span> <span class="p">[</span><span class="s1">'87ffa7'</span><span class="p">,</span> <span class="m">121</span><span class="p">]</span>
+<span class="c">" the place crawls with the beasts</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>crocodile  <span class="p">=</span> <span class="p">[</span><span class="s1">'5f875f'</span><span class="p">,</span> <span class="m">65</span><span class="p">]</span>
+<span class="c">" is similar to lime but slimier.</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>slime      <span class="p">=</span> <span class="p">[</span><span class="s1">'87ff00'</span><span class="p">,</span> <span class="m">118</span><span class="p">]</span>
+<span class="c">" Heavily burnt, rotting orange.</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>sunburn    <span class="p">=</span> <span class="p">[</span><span class="s1">'d75f00'</span><span class="p">,</span> <span class="m">166</span><span class="p">]</span>
+<span class="c">" Dirty underpass</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>concrete   <span class="p">=</span> <span class="p">[</span><span class="s1">'d7d7ff'</span><span class="p">,</span> <span class="m">189</span><span class="p">]</span>
+<span class="c">" Gradient fullfilled.</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>purple     <span class="p">=</span> <span class="p">[</span><span class="s1">'af00ff'</span><span class="p">,</span> <span class="m">127</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>purpler    <span class="p">=</span> <span class="p">[</span><span class="s1">'af00d7'</span><span class="p">,</span> <span class="m">129</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">s:mnc</span><span class="p">.</span>purplest   <span class="p">=</span> <span class="p">[</span><span class="s1">'af5fff'</span><span class="p">,</span> <span class="m">135</span><span class="p">]</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Highlighting Function {{{</span>
+<span class="k">function</span><span class="p">!</span> <span class="nv">s:HL</span><span class="p">(</span>group<span class="p">,</span> fg<span class="p">,</span> <span class="p">...)</span>
+    <span class="c">" Arguments: group, guifg, guibg, gui, guisp</span>
+
+    <span class="k">let</span> histring <span class="p">=</span> <span class="s1">'hi '</span> <span class="p">.</span> <span class="nv">a:group</span> <span class="p">.</span> <span class="s1">' '</span>
+
+    <span class="k">if</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">a:fg</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nv">a:fg</span> <span class="p">==</span> <span class="s1">'fg'</span>
+            <span class="k">let</span> histring <span class="p">.=</span> <span class="s1">'guifg=fg ctermfg=fg '</span>
+        <span class="k">else</span>
+            <span class="k">let</span> <span class="k">c</span> <span class="p">=</span> <span class="nb">get</span><span class="p">(</span><span class="nv">s:mnc</span><span class="p">,</span> <span class="nv">a:fg</span><span class="p">)</span>
+            <span class="k">let</span> histring <span class="p">.=</span> <span class="s1">'guifg=#'</span> <span class="p">.</span> <span class="k">c</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">.</span> <span class="s1">' ctermfg='</span> <span class="p">.</span> <span class="k">c</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="p">.</span> <span class="s1">' '</span>
+        <span class="k">endif</span>
+    <span class="k">endif</span>
+
+    <span class="k">if</span> <span class="nv">a:0</span> <span class="p">&gt;=</span> <span class="m">1</span> &amp;&amp; <span class="nb">strlen</span><span class="p">(</span><span class="nv">a:1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nv">a:1</span> <span class="p">==</span> <span class="s1">'bg'</span>
+            <span class="k">let</span> histring <span class="p">.=</span> <span class="s1">'guibg=bg ctermbg=bg '</span>
+        <span class="k">else</span>
+            <span class="k">let</span> <span class="k">c</span> <span class="p">=</span> <span class="nb">get</span><span class="p">(</span><span class="nv">s:mnc</span><span class="p">,</span> <span class="nv">a:1</span><span class="p">)</span>
+            <span class="k">let</span> histring <span class="p">.=</span> <span class="s1">'guibg=#'</span> <span class="p">.</span> <span class="k">c</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">.</span> <span class="s1">' ctermbg='</span> <span class="p">.</span> <span class="k">c</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="p">.</span> <span class="s1">' '</span>
+        <span class="k">endif</span>
+    <span class="k">endif</span>
+
+    <span class="k">if</span> <span class="nv">a:0</span> <span class="p">&gt;=</span> <span class="m">2</span> &amp;&amp; <span class="nb">strlen</span><span class="p">(</span><span class="nv">a:2</span><span class="p">)</span>
+        <span class="k">let</span> histring <span class="p">.=</span> <span class="s1">'gui='</span> <span class="p">.</span> <span class="nv">a:2</span> <span class="p">.</span> <span class="s1">' cterm='</span> <span class="p">.</span> <span class="nv">a:2</span> <span class="p">.</span> <span class="s1">' '</span>
+    <span class="k">endif</span>
+
+    <span class="k">if</span> <span class="nv">a:0</span> <span class="p">&gt;=</span> <span class="m">3</span> &amp;&amp; <span class="nb">strlen</span><span class="p">(</span><span class="nv">a:3</span><span class="p">)</span>
+        <span class="k">let</span> <span class="k">c</span> <span class="p">=</span> <span class="nb">get</span><span class="p">(</span><span class="nv">s:mnc</span><span class="p">,</span> <span class="nv">a:3</span><span class="p">)</span>
+        <span class="k">let</span> histring <span class="p">.=</span> <span class="s1">'guisp=#'</span> <span class="p">.</span> <span class="k">c</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">.</span> <span class="s1">' '</span>
+    <span class="k">endif</span>
+
+    <span class="c">" echom histring</span>
+
+    <span class="nb">execute</span> histring
+<span class="k">endfunction</span>
+<span class="c">" }}}</span>
+<span class="c">" Configuration Options {{{</span>
+
+<span class="k">let</span> <span class="nv">s:gutter</span><span class="p">=</span><span class="s1">'blackgray'</span>
+<span class="k">let</span> <span class="nv">s:tabline</span><span class="p">=</span><span class="s1">'blackgray'</span>
+<span class="c">" }}}</span>
+
+<span class="c">" Actual colorscheme ----------------------------------------------------------</span>
+<span class="c">" Vanilla Vim {{{</span>
+
+<span class="c">" General/UI {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Normal'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">'blackgray'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'NonText'</span><span class="p">,</span> <span class="s1">'crocodile'</span><span class="p">,</span> <span class="s1">'bg'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Folded'</span><span class="p">,</span> <span class="s1">'crocodile'</span><span class="p">,</span> <span class="s1">'bg'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'VertSplit'</span><span class="p">,</span> <span class="s1">'darkgray'</span><span class="p">,</span> <span class="s1">'deepgray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'CursorLine'</span><span class="p">,</span>   <span class="s1">''</span><span class="p">,</span> <span class="s1">'blackestgray'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'CursorColumn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'blackgray'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'ColorColumn'</span><span class="p">,</span>  <span class="s1">''</span><span class="p">,</span> <span class="s1">'blackgray'</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'TabLine'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span> <span class="nv">s:tabline</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'TabLineFill'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span> <span class="nv">s:tabline</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'TabLineSel'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'MatchParen'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">'darkgray'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'SpecialKey'</span><span class="p">,</span> <span class="s1">'crocodile'</span><span class="p">,</span> <span class="s1">'bg'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Visual'</span><span class="p">,</span>    <span class="s1">''</span><span class="p">,</span>  <span class="s1">'deepgray'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'VisualNOS'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span>  <span class="s1">'deepgray'</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Search'</span><span class="p">,</span>    <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'IncSearch'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span>    <span class="s1">'bold'</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Underlined'</span><span class="p">,</span> <span class="s1">'fg'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'underline'</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'StatusLine'</span><span class="p">,</span>   <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span>     <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'StatusLineNC'</span><span class="p">,</span> <span class="s1">'milk'</span><span class="p">,</span> <span class="s1">'deepgray'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Directory'</span><span class="p">,</span> <span class="s1">'hotpink'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Title'</span><span class="p">,</span> <span class="s1">'seastain'</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'ErrorMsg'</span><span class="p">,</span>   <span class="s1">'viceyellow'</span><span class="p">,</span><span class="s1">'bg'</span><span class="p">,</span><span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'MoreMsg'</span><span class="p">,</span>    <span class="s1">'concrete'</span><span class="p">,</span>  <span class="s1">''</span><span class="p">,</span>  <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'ModeMsg'</span><span class="p">,</span>    <span class="s1">'hotpink'</span><span class="p">,</span>   <span class="s1">''</span><span class="p">,</span>  <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Question'</span><span class="p">,</span>   <span class="s1">'hotpink'</span><span class="p">,</span>   <span class="s1">''</span><span class="p">,</span>  <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'WarningMsg'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span>  <span class="s1">''</span><span class="p">,</span>  <span class="s1">'bold'</span><span class="p">)</span>
+
+<span class="c">" This is a ctags tag, not an HTML one.  'Something you can use c-] on'.</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Tag'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+<span class="c">" hi IndentGuides                  guibg=#373737</span>
+<span class="c">" hi WildMenu        guifg=#66D9EF guibg=#000000</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Gutter {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'LineNr'</span><span class="p">,</span>       <span class="s1">'gray'</span><span class="p">,</span> <span class="nv">s:gutter</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'CursorLineNr'</span><span class="p">,</span> <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">'blackgray'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'SignColumn'</span><span class="p">,</span>   <span class="s1">''</span><span class="p">,</span>             <span class="nv">s:gutter</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'FoldColumn'</span><span class="p">,</span>   <span class="s1">'crocodile'</span><span class="p">,</span> <span class="nv">s:gutter</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Cursor {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Cursor'</span><span class="p">,</span>  <span class="s1">'crocodile'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'vCursor'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'iCursor'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Syntax highlighting {{{</span>
+
+<span class="c">" Start with a simple base.</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Special'</span><span class="p">,</span> <span class="s1">'seastain'</span><span class="p">)</span>
+
+<span class="c">" Comments are slightly brighter than folds, to make 'headers' easier to see.</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Comment'</span><span class="p">,</span>        <span class="s1">'crocodile'</span><span class="p">,</span> <span class="s1">'bg'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Todo'</span><span class="p">,</span>           <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">'bg'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'SpecialComment'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">'bg'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+<span class="c">" Strings are a nice, pale straw color.  Nothing too fancy.</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'String'</span><span class="p">,</span> <span class="s1">'hotpink'</span><span class="p">)</span>
+
+<span class="c">" Control flow stuff is viceyellow.</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Statement'</span><span class="p">,</span>   <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Keyword'</span><span class="p">,</span>     <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Conditional'</span><span class="p">,</span> <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Operator'</span><span class="p">,</span>    <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Label'</span><span class="p">,</span>       <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Repeat'</span><span class="p">,</span>      <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+<span class="c">" Functions and variable declarations are sunburn, because plain looks weird.</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Identifier'</span><span class="p">,</span>   <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Function'</span><span class="p">,</span>     <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'vimFunction'</span><span class="p">,</span>  <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'vimFunc'</span><span class="p">,</span>      <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'vimIsCommand'</span><span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'PreProc'</span><span class="p">,</span>     <span class="s1">'seastain'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Macro'</span><span class="p">,</span>       <span class="s1">'seastain'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Define'</span><span class="p">,</span>      <span class="s1">'seastain'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'PreCondit'</span><span class="p">,</span>   <span class="s1">'seastain'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Constant'</span><span class="p">,</span>      <span class="s1">'purple'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Character'</span><span class="p">,</span>     <span class="s1">'purple'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Boolean'</span><span class="p">,</span>       <span class="s1">'purple'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Number'</span><span class="p">,</span>        <span class="s1">'purple'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Float'</span><span class="p">,</span>         <span class="s1">'purple'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'SpecialChar'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Type'</span><span class="p">,</span>        <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'StorageClass'</span><span class="p">,</span> <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Structure'</span><span class="p">,</span> <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Typedef'</span><span class="p">,</span>   <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="c">" Make try/catch blocks stand out.</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Exception'</span><span class="p">,</span><span class="s1">'seastain'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="c">" Misc</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Error'</span><span class="p">,</span><span class="s1">'hotpink'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Debug'</span><span class="p">,</span> <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Ignore'</span><span class="p">,</span> <span class="s1">'mediumgray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="c">" }}}</span>
+<span class="c">" Completion Menu {{{</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'Pmenu'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">'deepergray'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'PmenuSel'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'PmenuSbar'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'deepergray'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'PmenuThumb'</span><span class="p">,</span> <span class="s1">'brightgray'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Diffs {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'DiffDelete'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'DiffAdd'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'deepergray'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'DiffChange'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'darkgray'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'DiffText'</span><span class="p">,</span> <span class="s1">'milk'</span><span class="p">,</span> <span class="s1">'deepergray'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Spelling {{{</span>
+
+<span class="k">if</span> <span class="nb">has</span><span class="p">(</span><span class="s2">"spell"</span><span class="p">)</span>
+    <span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'SpellCap'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">'bg'</span><span class="p">,</span> <span class="s1">'undercurl,bold'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">)</span>
+    <span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'SpellBad'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bg'</span><span class="p">,</span> <span class="s1">'undercurl'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">)</span>
+    <span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'SpellLocal'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'undercurl'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">)</span>
+    <span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'SpellRare'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'undercurl'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">)</span>
+<span class="k">endif</span>
+
+<span class="c">" }}}</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Plugins {{{</span>
+
+<span class="c">" CtrlP {{{</span>
+
+    <span class="c">" the message when no match is found</span>
+    <span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'CtrlPNoEntries'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+    <span class="c">" the matched pattern</span>
+    <span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'CtrlPMatch'</span><span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">'bg'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+    <span class="c">" the line prefix '&gt;' in the match window</span>
+    <span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'CtrlPLinePre'</span><span class="p">,</span> <span class="s1">'deepgray'</span><span class="p">,</span> <span class="s1">'bg'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+    <span class="c">" the prompt’s base</span>
+    <span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'CtrlPPrtBase'</span><span class="p">,</span> <span class="s1">'deepgray'</span><span class="p">,</span> <span class="s1">'bg'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+    <span class="c">" the prompt’s text</span>
+    <span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'CtrlPPrtText'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">'bg'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+    <span class="c">" the prompt’s cursor when moving over the text</span>
+    <span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'CtrlPPrtCursor'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+    <span class="c">" 'prt' or 'win', also for 'regex'</span>
+    <span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'CtrlPMode1'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+    <span class="c">" 'file' or 'path', also for the local working dir</span>
+    <span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'CtrlPMode2'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+    <span class="c">" the scanning status</span>
+    <span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'CtrlPStats'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+    <span class="c">" TODO: CtrlP extensions.</span>
+    <span class="c">" CtrlPTabExtra  : the part of each line that’s not matched against (Comment)</span>
+    <span class="c">" CtrlPqfLineCol : the line and column numbers in quickfix mode (|s:HL-Search|)</span>
+    <span class="c">" CtrlPUndoT     : the elapsed time in undo mode (|s:HL-Directory|)</span>
+    <span class="c">" CtrlPUndoBr    : the square brackets [] in undo mode (Comment)</span>
+    <span class="c">" CtrlPUndoNr    : the undo number inside [] in undo mode (String)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" EasyMotion {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'EasyMotionTarget'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span>  <span class="s1">'bg'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'EasyMotionShade'</span><span class="p">,</span>  <span class="s1">'deepgray'</span><span class="p">,</span> <span class="s1">'bg'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Interesting Words {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'InterestingWord1'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'InterestingWord2'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'InterestingWord3'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'seastain'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'InterestingWord4'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'purple'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'InterestingWord5'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'InterestingWord6'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'viceyellow'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Makegreen {{{</span>
+<span class="c">"</span>
+<span class="c">" hi GreenBar term=reverse ctermfg=white ctermbg=green guifg=ink guibg=#9edf1c</span>
+<span class="c">" hi RedBar   term=reverse ctermfg=white ctermbg=red guifg=white guibg=#C50048</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Rainbow Parentheses {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'level16c'</span><span class="p">,</span> <span class="s1">'mediumgray'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'level15c'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'level14c'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'level13c'</span><span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'level12c'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'level11c'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'level10c'</span><span class="p">,</span> <span class="s1">'purple'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'level9c'</span><span class="p">,</span>  <span class="s1">'seastain'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'level8c'</span><span class="p">,</span>  <span class="s1">'purpler'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'level7c'</span><span class="p">,</span>  <span class="s1">'concrete'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'level6c'</span><span class="p">,</span>  <span class="s1">'concrete'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'level5c'</span><span class="p">,</span>  <span class="s1">'sunburn'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'level4c'</span><span class="p">,</span>  <span class="s1">'slime'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'level3c'</span><span class="p">,</span>  <span class="s1">'lime'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'level2c'</span><span class="p">,</span>  <span class="s1">'purple'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'level1c'</span><span class="p">,</span>  <span class="s1">'seastain'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" ShowMarks {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'ShowMarksHLl'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span> <span class="s1">'blackgray'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'ShowMarksHLu'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span> <span class="s1">'blackgray'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'ShowMarksHLo'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span> <span class="s1">'blackgray'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'ShowMarksHLm'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span> <span class="s1">'blackgray'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Filetype-specific {{{</span>
+
+<span class="c">" Clojure {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'clojureSpecial'</span><span class="p">,</span>  <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'clojureDefn'</span><span class="p">,</span>     <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'clojureDefMacro'</span><span class="p">,</span> <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'clojureDefine'</span><span class="p">,</span>   <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'clojureMacro'</span><span class="p">,</span>    <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'clojureCond'</span><span class="p">,</span>     <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'clojureKeyword'</span><span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'clojureFunc'</span><span class="p">,</span>   <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'clojureRepeat'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'clojureParen0'</span><span class="p">,</span> <span class="s1">'lightgray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'clojureAnonArg'</span><span class="p">,</span> <span class="s1">'milk'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Common Lisp {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'lispFunc'</span><span class="p">,</span>           <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'lispVar'</span><span class="p">,</span>            <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'lispEscapeSpecial'</span><span class="p">,</span>  <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" CSS {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'cssColorProp'</span><span class="p">,</span> <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'cssBoxProp'</span><span class="p">,</span> <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'cssTextProp'</span><span class="p">,</span> <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'cssRenderProp'</span><span class="p">,</span> <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'cssGeneratedContentProp'</span><span class="p">,</span> <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'cssValueLength'</span><span class="p">,</span> <span class="s1">'purple'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'cssColor'</span><span class="p">,</span> <span class="s1">'purple'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'cssBraces'</span><span class="p">,</span> <span class="s1">'lightgray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'cssIdentifier'</span><span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'cssClassName'</span><span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Diff {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'gitDiff'</span><span class="p">,</span> <span class="s1">'lightgray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'diffRemoved'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'diffAdded'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'diffFile'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'diffNewFile'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'diffLine'</span><span class="p">,</span> <span class="s1">'ink'</span><span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'diffSubname'</span><span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Django Templates {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'djangoArgument'</span><span class="p">,</span> <span class="s1">'hotpink'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'djangoTagBlock'</span><span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'djangoVarBlock'</span><span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" HTML {{{</span>
+
+<span class="c">" Punctuation</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'htmlTag'</span><span class="p">,</span>    <span class="s1">'purple'</span><span class="p">,</span> <span class="s1">'bg'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'htmlEndTag'</span><span class="p">,</span> <span class="s1">'purplest'</span><span class="p">,</span> <span class="s1">'bg'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+<span class="c">" Tag names</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'htmlTagName'</span><span class="p">,</span>       <span class="s1">'purple'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'htmlSpecialTagName'</span><span class="p">,</span><span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'htmlSpecialChar'</span><span class="p">,</span>      <span class="s1">'slime'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+<span class="c">" Attributes</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'htmlArg'</span><span class="p">,</span> <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+<span class="c">" Stuff inside an &lt;a&gt; tag</span>
+
+    <span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'htmlLink'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'underline'</span><span class="p">)</span>
+<span class="c">" }}}</span>
+<span class="c">" Java {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'javaClassDecl'</span><span class="p">,</span> <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'javaScopeDecl'</span><span class="p">,</span> <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'javaCommentTitle'</span><span class="p">,</span>    <span class="s1">'lightgray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'javaDocTags'</span><span class="p">,</span> <span class="s1">'milk'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'javaDocParam'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span><span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" LaTeX {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'texStatement'</span>  <span class="p">,</span> <span class="s1">'slime'</span>  <span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'texMathZoneX'</span>  <span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'texMathZoneA'</span>  <span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'texMathZoneB'</span>  <span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'texMathZoneC'</span>  <span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'texMathZoneD'</span>  <span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'texMathZoneE'</span>  <span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'texMathZoneV'</span>  <span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'texMathZoneX'</span>  <span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'texMath'</span>       <span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'texMathMatcher'</span><span class="p">,</span><span class="s1">'sunburn'</span> <span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'texRefLabel '</span>  <span class="p">,</span> <span class="s1">'hotpink'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'texRefZone'</span>    <span class="p">,</span>    <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'texComment'</span>    <span class="p">,</span><span class="s1">'purplest'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'texDelimiter'</span>  <span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'texZone'</span>   <span class="p">,</span><span class="s1">'brightgray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+augroup badwolf_tex
+    <span class="k">au</span><span class="p">!</span>
+
+    <span class="k">au</span> <span class="nb">BufRead</span><span class="p">,</span><span class="nb">BufNewFile</span> *<span class="p">.</span>tex <span class="k">syn</span> region texMathZoneV start<span class="p">=</span><span class="s2">"\\("</span> end<span class="p">=</span><span class="s2">"\\)\|%stopzone\&gt;"</span> keepend contains<span class="p">=</span>@texMathZoneGroup
+    <span class="k">au</span> <span class="nb">BufRead</span><span class="p">,</span><span class="nb">BufNewFile</span> *<span class="p">.</span>tex <span class="k">syn</span> region texMathZoneX start<span class="p">=</span><span class="s2">"\$"</span> skip<span class="p">=</span><span class="s2">"\\\\\|\\\$"</span> end<span class="p">=</span><span class="s2">"\$\|%stopzone\&gt;"</span> keepend contains<span class="p">=</span>@texMathZoneGroup
+augroup END
+
+<span class="c">" }}}</span>
+<span class="c">" LessCSS {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'lessVariable'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Lispyscript {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'lispyscriptDefMacro'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'lispyscriptRepeat'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" REPLs {{{</span>
+<span class="c">" This isn't a specific plugin, but just useful highlight classes for anything</span>
+<span class="c">" that might want to use them.</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'replPrompt'</span><span class="p">,</span> <span class="s1">'slime'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Mail {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'mailSubject'</span><span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'mailHeader'</span><span class="p">,</span> <span class="s1">'lightgray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'mailHeaderKey'</span><span class="p">,</span> <span class="s1">'lightgray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'mailHeaderEmail'</span><span class="p">,</span> <span class="s1">'milk'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'mailURL'</span><span class="p">,</span> <span class="s1">'purple'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'underline'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'mailSignature'</span><span class="p">,</span> <span class="s1">'gray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'mailQuoted1'</span><span class="p">,</span> <span class="s1">'gray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'mailQuoted2'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'mailQuoted3'</span><span class="p">,</span> <span class="s1">'hotpink'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'mailQuoted4'</span><span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'mailQuoted5'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Markdown {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownHeadingRule'</span><span class="p">,</span> <span class="s1">'lightgray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownHeadingDelimiter'</span><span class="p">,</span> <span class="s1">'lightgray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownOrderedListMarker'</span><span class="p">,</span> <span class="s1">'lightgray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownListMarker'</span><span class="p">,</span> <span class="s1">'lightgray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownItalic'</span><span class="p">,</span> <span class="s1">'milk'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownBold'</span><span class="p">,</span> <span class="s1">'milk'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownH1'</span><span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownH2'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownH3'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownH4'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownH5'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownH6'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownLinkText'</span><span class="p">,</span> <span class="s1">'purple'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'underline'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownIdDeclaration'</span><span class="p">,</span> <span class="s1">'purple'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownAutomaticLink'</span><span class="p">,</span> <span class="s1">'purple'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownUrl'</span><span class="p">,</span> <span class="s1">'purple'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownUrldelimiter'</span><span class="p">,</span> <span class="s1">'lightgray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownLinkDelimiter'</span><span class="p">,</span> <span class="s1">'lightgray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownLinkTextDelimiter'</span><span class="p">,</span> <span class="s1">'lightgray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownCodeDelimiter'</span><span class="p">,</span> <span class="s1">'hotpink'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownCode'</span><span class="p">,</span> <span class="s1">'hotpink'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'markdownCodeBlock'</span><span class="p">,</span> <span class="s1">'hotpink'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" MySQL {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'mysqlSpecial'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Python {{{</span>
+
+<span class="k">hi</span> <span class="k">def</span> link pythonOperator Operator
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'pythonBuiltin'</span><span class="p">,</span>     <span class="s1">'concrete'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'pythonBuiltinObj'</span><span class="p">,</span>  <span class="s1">'concrete'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'pythonBuiltinFunc'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'pythonEscape'</span><span class="p">,</span>      <span class="s1">'concrete'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'pythonException'</span><span class="p">,</span>   <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'pythonExceptions'</span><span class="p">,</span>  <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'pythonPrecondit'</span><span class="p">,</span>   <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'pythonDecorator'</span><span class="p">,</span>   <span class="s1">'viceyellow'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'pythonRun'</span><span class="p">,</span>         <span class="s1">'gray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'pythonCoding'</span><span class="p">,</span>      <span class="s1">'gray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" SLIMV {{{</span>
+
+<span class="c">" Rainbow parentheses</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'hlLevel0'</span><span class="p">,</span> <span class="s1">'gray'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'hlLevel1'</span><span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'hlLevel2'</span><span class="p">,</span> <span class="s1">'seastain'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'hlLevel3'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'hlLevel4'</span><span class="p">,</span> <span class="s1">'purpler'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'hlLevel5'</span><span class="p">,</span> <span class="s1">'hotpink'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'hlLevel6'</span><span class="p">,</span> <span class="s1">'sunburn'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'hlLevel7'</span><span class="p">,</span> <span class="s1">'seastain'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'hlLevel8'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'hlLevel9'</span><span class="p">,</span> <span class="s1">'purpler'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+<span class="c">" Vim {{{</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'VimCommentTitle'</span><span class="p">,</span> <span class="s1">'lightgray'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'VimMapMod'</span><span class="p">,</span>    <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'VimMapModKey'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'VimNotation'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+<span class="k">call</span> <span class="nv">s:HL</span><span class="p">(</span><span class="s1">'VimBracket'</span><span class="p">,</span> <span class="s1">'concrete'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">)</span>
+
+<span class="c">" }}}</span>
+
+<span class="c">" }}}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+                            </div>
+                        </div>
+                        <div id="flex-right" class="flex right center">
+                            <div id="file-info" class="center">
+                                <p>Title: miamineon.vim </p>
+                                <p>Author: keelbeelveel</p>
+                                <p>Revised: May 26, 2020, 6:04 PM EST</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END OF PAGE CONTENT -->
+                </main>
+            </div>
+        </div>
+        <!-- Footer revised 6/13/2020 2:26 PM -->
+<div id="footer" class="footer">
+    <footer>
+        <span> Powered By
+            <a style="color:#d7005f" href="https://github.com/keelbeelveel/keelbeelveel.github.io">
+                GitHub
+            </a>
+        </span>
+    </footer>
+</div>
+
+    </body>
+</html>

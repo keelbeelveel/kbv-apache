@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <!-- Head Revised 6/22/2020 6:28 PM -->
+<link rel="stylesheet" type="text/css" href="/css/main.css"/>
+<meta name="author" content="Kyle Belveal"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="revised" content="Mon. June 1, 2020 9:26 PM"/>
+<meta name="description" content="keelbeelveel.com miamineon-airline.vim info page."/>
+<title>keelbeelveel.com | miamineon-airline.vim</title>
+<meta charset="UTF-8"/>
+
+        <link rel="stylesheet" type="text/css" href="/css/infobs.css"/>
+        <link rel="icon" href="/resources/icons/favicon.png" type="image/png"/>
+        <meta name="keywords" content="Kyle Belveal, keelbeelveel, computer science, computer engineering, computer, CS, CE, EECS, engineering, projects, project, vim, vim-airline, vim-plug, plugin, vimscript, colorscheme, neon, color, miamineon"/>
+        <!-- Layout type = info_basic        -->
+        <!-- Layout revised 6/22/2020 8:06pm -->
+    </head>
+    <body>
+        
+        <!-- Header revised 6/23/2020 10:02 PM -->
+<div id="header" class="header">
+    <header class="header">
+        <ul class="bar">
+            <li class="nav-home">
+                <a href="/index.html">
+                    <img src="/resources/icons/home.png"/>
+                </a>
+            </li>
+            <li class="nav-link">
+                <a href="/hardware.html">
+                    <span class"lbl">
+                        Hardware
+                    </span>
+                </a>
+            </li>
+            <li class="nav-link">
+                <a href="/midware.html">
+                    <span class="lbl">
+                        Midware
+                    </span>
+                </a>
+            </li>
+            <li class="nav-link">
+                <a href="/software/software.html">
+                    <span class="lbl">
+                        Software
+                    </span>
+                </a>
+            </li>
+            <li class="nav-link">
+                <a href="/projects/projects.html">
+                    <span class="lbl">
+                        All Projects
+                    </span>
+                </a>
+            </li>
+            <li class="nav-icon">
+                <a href="/about.html">
+                    <img src="/resources/icons/contact.png"/>
+                </a>
+            </li>
+            <li class="nav-icon">
+                <a href="https://github.com/keelbeelveel">
+                    <img src="/resources/icons/github.png"/>
+                </a>
+            </li>
+            <li class="nav-icon">
+                <a href="https://www.linkedin.com/in/keelbeelveel/">
+                    <img src="/resources/icons/linkedin.png"/>
+                </a>
+            </li>
+            <li class="nav-icon">
+                <a href="mailto:k.belveal17@gmail.com?subject=Contact from keelbeelveel.com">
+                    <img src="/resources/icons/mailto.png"/>
+                </a>
+            </li>
+            <li class="nav-banner">
+                <span id='a'>
+            
+                </span>
+            </li>
+        </ul>
+    </header>
+</div>
+
+        
+        <div id="body" class="contains-flex">
+            <div id="page-container" class="flex">
+                <main>
+                    <div id="content-wrap" class="content-wrap contains-flex">
+                        <div id="flex-left" class="flex left">
+                            <div id="page-header" class="page-header">
+                                <h3 class="page-header">
+                                    <div class="center">
+                                        <div class="icontooltip">
+                                            <a href="https://www.vim.org/">
+                                                <img src="/resources/icons/miamineon.png" alt="Icon" class="icon">
+                                            </a>
+                                            <span class="icontooltiptext text">
+                                                vimscript
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div id="page-title" class="page-header title">
+                                        miamineon-airline.vim
+                                    </div>
+                                </h3>
+                                <span id="page-desc" class="page-header">
+                                    <h4 class="page-header">
+                                        The file which defines the airline colorscheme component of miamineon. Built on Steve Losh's <a href="https://github.com/sjl/badwolf">badwolf</a>.
+                                    </h4>
+                                </span>
+                            </div>
+                            <div id="file-links" class="software-links text center contains-flex">
+                                <a href="https://github.com/keelbeelveel/miamineon/blob/master/miamineon-airline.vim">Github</a>
+                            </div>
+                        </div>
+                        <div id="flex-center" class="flex center">
+                            <div id="" class="file vim">
+                                <div id="file-label-type" class="file label text">
+                                    vimscript
+                                </div>
+                                <div id="file-label-title" class="file label text">
+                                    <a href="https://github.com/keelbeelveel/miamineon/blob/master/miamineon-airline.vim">miamineon-airline.vim</a> from <a href="https://github.com/keelbeelveel/">keelbeelveel's Github</a>
+                                </div>
+                                <figure class="highlight"><pre><code class="language-vim" data-lang="vim"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+</pre></td><td class="code"><pre><span class="k">let</span> <span class="nv">s:N1</span> <span class="p">=</span> <span class="p">[</span> <span class="s1">'#141413'</span> <span class="p">,</span> <span class="s1">'#00ff00'</span> <span class="p">,</span> <span class="m">232</span> <span class="p">,</span> <span class="m">10</span>  <span class="p">]</span> " blackestgray &amp; lime
+<span class="k">let</span> <span class="nv">s:N2</span> <span class="p">=</span> <span class="p">[</span> <span class="s1">'#87ff00'</span> <span class="p">,</span> <span class="s1">'#45413b'</span> <span class="p">,</span> <span class="m">118</span> <span class="p">,</span> <span class="m">238</span> <span class="p">]</span> " slime          &amp; deepgray
+<span class="k">let</span> <span class="nv">s:N3</span> <span class="p">=</span> <span class="p">[</span> <span class="s1">'#87ffaf'</span> <span class="p">,</span> <span class="s1">'#242321'</span> <span class="p">,</span> <span class="m">121</span> <span class="p">,</span> <span class="m">235</span> <span class="p">]</span> " seastain       &amp; blackgray
+<span class="k">let</span> <span class="nv">s:N4</span> <span class="p">=</span> <span class="p">[</span> <span class="s1">'#666462'</span> <span class="p">,</span> <span class="m">241</span> <span class="p">]</span>                   " mediumgray
+
+<span class="k">let</span> <span class="nv">s:I1</span> <span class="p">=</span> <span class="p">[</span> <span class="s1">'#141413'</span> <span class="p">,</span> <span class="s1">'#87ff00'</span> <span class="p">,</span> <span class="m">232</span> <span class="p">,</span> <span class="m">118</span> <span class="p">]</span> " blackestgray &amp; slime
+<span class="k">let</span> <span class="nv">s:I2</span> <span class="p">=</span> <span class="p">[</span> <span class="s1">'#d7d7ff'</span> <span class="p">,</span> <span class="s1">'#d7005f'</span> <span class="p">,</span> <span class="m">189</span> <span class="p">,</span> <span class="m">162</span> <span class="p">]</span> " concrete       &amp; hotpink
+<span class="k">let</span> <span class="nv">s:I3</span> <span class="p">=</span> <span class="p">[</span> <span class="s1">'#d75f00'</span> <span class="p">,</span> <span class="s1">'#242321'</span> <span class="p">,</span> <span class="m">166</span> <span class="p">,</span> <span class="m">235</span> <span class="p">]</span> " sunburn        &amp; darkgray
+
+<span class="k">let</span> <span class="nv">s:V1</span> <span class="p">=</span> <span class="p">[</span> <span class="s1">'#d7d7ff'</span> <span class="p">,</span> <span class="s1">'#5f875f'</span> <span class="p">,</span> <span class="m">193</span> <span class="p">,</span> <span class="m">65</span>  <span class="p">]</span> " blackestgray &amp; seastain
+<span class="k">let</span> <span class="nv">s:V2</span> <span class="p">=</span> <span class="p">[</span> <span class="s1">'#080808'</span> <span class="p">,</span> <span class="s1">'#d7d7ff'</span> <span class="p">,</span> <span class="m">232</span> <span class="p">,</span> <span class="m">189</span> <span class="p">]</span> " ink            &amp; concrete
+<span class="k">let</span> <span class="nv">s:V3</span> <span class="p">=</span> <span class="p">[</span> <span class="s1">'#d7ff00'</span> <span class="p">,</span> <span class="s1">'#45413b'</span> <span class="p">,</span> <span class="m">190</span> <span class="p">,</span> <span class="m">238</span> <span class="p">]</span> " viceyellow     &amp; blackgray
+<span class="k">let</span> <span class="nv">s:V4</span> <span class="p">=</span> <span class="p">[</span> <span class="s1">'#666462'</span> <span class="p">,</span> <span class="m">241</span> <span class="p">]</span>                   " concrete       &amp; purple
+
+<span class="k">let</span> <span class="nv">s:IN1</span><span class="p">=</span> <span class="p">[</span> <span class="s1">'#5f875f'</span> <span class="p">,</span> <span class="s1">'#141413'</span> <span class="p">,</span> <span class="m">65</span>  <span class="p">,</span> <span class="m">232</span> <span class="p">]</span>
+<span class="k">let</span> <span class="nv">s:IN2</span><span class="p">=</span> <span class="p">[</span> <span class="s1">'#d7005f'</span> <span class="p">,</span> <span class="s1">'#141413'</span> <span class="p">,</span> <span class="m">162</span> <span class="p">,</span> <span class="m">232</span> <span class="p">]</span>
+<span class="k">let</span> <span class="nv">s:IN3</span><span class="p">=</span> <span class="p">[</span> <span class="s1">'#d7ff00'</span> <span class="p">,</span> <span class="s1">'#666462'</span> <span class="p">,</span> <span class="m">190</span> <span class="p">,</span> <span class="m">241</span> <span class="p">]</span>
+
+<span class="k">let</span> <span class="nv">s:RE</span> <span class="p">=</span> <span class="p">[</span> <span class="s1">'#d7ff00'</span> <span class="p">,</span> <span class="m">190</span> <span class="p">]</span>                   " viceyellow
+<span class="k">let</span> <span class="nv">s:PA</span> <span class="p">=</span> <span class="p">[</span> <span class="s1">'#d7d7ff'</span> <span class="p">,</span> <span class="m">189</span> <span class="p">]</span>                   " concrete
+
+
+<span class="k">let</span> <span class="nv">g:airline</span>#themes#miamineon#palette <span class="p">=</span> <span class="p">{}</span>
+
+<span class="k">let</span> <span class="nv">g:airline</span>#themes#miamineon#palette<span class="p">.</span>accents <span class="p">=</span> <span class="p">{</span>
+<span class="se">      \</span> <span class="s1">'hotpink'</span><span class="p">:</span> <span class="p">[</span> <span class="s1">'#d7005f'</span> <span class="p">,</span> <span class="s1">''</span> <span class="p">,</span> <span class="m">162</span> <span class="p">,</span> <span class="s1">''</span> <span class="p">,</span> <span class="s1">''</span> <span class="p">]</span>
+<span class="se">      \</span> <span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">g:airline</span>#themes#miamineon#palette<span class="p">.</span>normal <span class="p">=</span> airline#themes#generate_color_map<span class="p">(</span><span class="nv">s:N1</span><span class="p">,</span> <span class="nv">s:N2</span><span class="p">,</span> <span class="nv">s:N3</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">g:airline</span>#themes#miamineon#palette<span class="p">.</span>normal_modified <span class="p">=</span> <span class="p">{</span>
+<span class="se">      \</span> <span class="s1">'airline_b'</span><span class="p">:</span> <span class="p">[</span> <span class="nv">s:N2</span><span class="p">[</span><span class="m">0</span><span class="p">]</span>   <span class="p">,</span> <span class="nv">s:N4</span><span class="p">[</span><span class="m">0</span><span class="p">]</span>   <span class="p">,</span> <span class="nv">s:N2</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>   <span class="p">,</span> <span class="nv">s:N4</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>   <span class="p">,</span> <span class="s1">''</span>     <span class="p">]</span> <span class="p">,</span>
+<span class="se">      \</span> <span class="s1">'airline_c'</span><span class="p">:</span> <span class="p">[</span> <span class="nv">s:V1</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>   <span class="p">,</span> <span class="nv">s:N2</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>   <span class="p">,</span> <span class="nv">s:V1</span><span class="p">[</span><span class="m">3</span><span class="p">]</span>   <span class="p">,</span> <span class="nv">s:N2</span><span class="p">[</span><span class="m">3</span><span class="p">]</span>   <span class="p">,</span> <span class="s1">''</span>     <span class="p">]</span> <span class="p">}</span>
+
+
+<span class="k">let</span> <span class="nv">g:airline</span>#themes#miamineon#palette<span class="p">.</span><span class="nb">insert</span> <span class="p">=</span> airline#themes#generate_color_map<span class="p">(</span><span class="nv">s:I1</span><span class="p">,</span> <span class="nv">s:I2</span><span class="p">,</span> <span class="nv">s:I3</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">g:airline</span>#themes#miamineon#palette<span class="p">.</span>insert_modified <span class="p">=</span> <span class="p">{</span>
+<span class="se">      \</span> <span class="s1">'airline_c'</span><span class="p">:</span> <span class="p">[</span> <span class="nv">s:V1</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>   <span class="p">,</span> <span class="nv">s:N2</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>   <span class="p">,</span> <span class="nv">s:V1</span><span class="p">[</span><span class="m">3</span><span class="p">]</span>   <span class="p">,</span> <span class="nv">s:N2</span><span class="p">[</span><span class="m">3</span><span class="p">]</span>   <span class="p">,</span> <span class="s1">''</span>     <span class="p">]</span> <span class="p">}</span>
+<span class="k">let</span> <span class="nv">g:airline</span>#themes#miamineon#palette<span class="p">.</span>insert_paste <span class="p">=</span> <span class="p">{</span>
+<span class="se">      \</span> <span class="s1">'airline_a'</span><span class="p">:</span> <span class="p">[</span> <span class="nv">s:I1</span><span class="p">[</span><span class="m">0</span><span class="p">]</span>   <span class="p">,</span> <span class="nv">s:PA</span><span class="p">[</span><span class="m">0</span><span class="p">]</span>   <span class="p">,</span> <span class="nv">s:I1</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>   <span class="p">,</span> <span class="nv">s:PA</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>   <span class="p">,</span> <span class="s1">''</span>     <span class="p">]</span> <span class="p">}</span>
+
+
+<span class="k">let</span> <span class="nv">g:airline</span>#themes#miamineon#palette<span class="p">.</span>replace <span class="p">=</span> <span class="k">copy</span><span class="p">(</span>airline#themes#miamineon#palette<span class="p">.</span><span class="nb">insert</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">g:airline</span>#themes#miamineon#palette<span class="p">.</span>replace<span class="p">.</span>airline_a <span class="p">=</span> <span class="p">[</span> <span class="nv">s:I1</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">,</span> <span class="nv">s:RE</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">,</span> <span class="nv">s:I1</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="p">,</span> <span class="nv">s:RE</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="p">,</span> <span class="s1">''</span> <span class="p">]</span>
+<span class="k">let</span> <span class="nv">g:airline</span>#themes#miamineon#palette<span class="p">.</span>replace_modified <span class="p">=</span> <span class="nv">g:airline</span>#themes#miamineon#palette<span class="p">.</span>insert_modified
+
+<span class="k">let</span> <span class="nv">g:airline</span>#themes#miamineon#palette<span class="p">.</span><span class="k">visual</span> <span class="p">=</span> airline#themes#generate_color_map<span class="p">(</span><span class="nv">s:V1</span><span class="p">,</span> <span class="nv">s:V2</span><span class="p">,</span> <span class="nv">s:V3</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">g:airline</span>#themes#miamineon#palette<span class="p">.</span>visual_modified <span class="p">=</span> <span class="p">{</span>
+<span class="se">      \</span> <span class="s1">'airline_c'</span><span class="p">:</span> <span class="p">[</span> <span class="nv">s:V3</span><span class="p">[</span><span class="m">0</span><span class="p">]</span>   <span class="p">,</span> <span class="nv">s:V4</span><span class="p">[</span><span class="m">0</span><span class="p">]</span>   <span class="p">,</span> <span class="nv">s:V3</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>   <span class="p">,</span> <span class="nv">s:V4</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>   <span class="p">,</span> <span class="s1">''</span>     <span class="p">]</span> <span class="p">}</span>
+
+
+<span class="k">let</span> <span class="nv">g:airline</span>#themes#miamineon#palette<span class="p">.</span>inactive <span class="p">=</span> airline#themes#generate_color_map<span class="p">(</span><span class="nv">s:IN1</span><span class="p">,</span> <span class="nv">s:IN2</span><span class="p">,</span> <span class="nv">s:IN3</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">g:airline</span>#themes#miamineon#palette<span class="p">.</span>inactive_modified <span class="p">=</span> <span class="p">{</span>
+<span class="se">      \</span> <span class="s1">'airline_c'</span><span class="p">:</span> <span class="p">[</span> <span class="nv">s:V1</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>   <span class="p">,</span> <span class="s1">''</span>        <span class="p">,</span> <span class="nv">s:V1</span><span class="p">[</span><span class="m">3</span><span class="p">]</span>   <span class="p">,</span> <span class="s1">''</span>        <span class="p">,</span> <span class="s1">''</span>     <span class="p">]</span> <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+                            </div>
+                        </div>
+                        <div id="flex-right" class="flex right center">
+                            <div id="file-info" class="center">
+                                <p>Title: miamineon-airline.vim </p>
+                                <p>Author: keelbeelveel</p>
+                                <p>Revised: May 26, 2020, 6:04 PM EST</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END OF PAGE CONTENT -->
+                </main>
+            </div>
+        </div>
+        <!-- Footer revised 6/13/2020 2:26 PM -->
+<div id="footer" class="footer">
+    <footer>
+        <span> Powered By
+            <a style="color:#d7005f" href="https://github.com/keelbeelveel/keelbeelveel.github.io">
+                GitHub
+            </a>
+        </span>
+    </footer>
+</div>
+
+    </body>
+</html>
